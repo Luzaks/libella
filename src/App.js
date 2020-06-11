@@ -3,6 +3,10 @@ import axios from 'axios';
 import './App.css';
 
 class App extends React.Component {
+    constructor(props){
+        super(props);
+        this.fetchAdvice = this.fetchAdvice.bind(this);
+    }
 
     state = {
         advice: ''
