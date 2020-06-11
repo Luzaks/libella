@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+@font-face {
+    font-family: Tall;
+    src: url(./images/talldark.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+    font-family: Sadist;
+    src: url(./images/sadistpu.ttf);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@font-face {
+    font-family: Masticusy;
+    src: url(./images/Winsthen.ttf);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#root, html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.app {
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./images/Jongro-Rainy-5a262c5ff1823__880.jpg") center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+    width: 30%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 2px;
+    padding: 2%;
+    font-family: Tall, sans-serif;
+    color: white;
+    font-size: 32px;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.button {
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    height: 50px;
+    width: 190px;
+    opacity: 1;
+    background-color: transparent;
+    border: 1px solid rgba(67, 47, 188, 0.6);
+}
+
+.button span {
+    color: #0defef;
+    font-family: Sadist, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.button:hover {
+    animation: rotate 0.7s ease-in-out both;
+}
+
+.button:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    25% {
+        transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+    50% {
+        transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+    75% {
+        transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+    100% {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+    25% {
+        transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+    50% {
+        transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+    75% {
+        transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+    100% {
+        transform: translate3d(0, 0, 0) translateZ(0);
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 80%;
+        height: 30%;
+    }
 }
