@@ -5,12 +5,11 @@ import './App.css';
 class App extends React.Component {
     constructor(props){
         super(props);
-        this.fetchAdvice = this.fetchAdvice.bind(this);
-    }
 
-    state = {
-        advice: ''
-    };
+        this.state = {
+            advice: ''
+        };
+    }
 
     componentDidMount() {
         this.fetchAdvice();
@@ -20,10 +19,10 @@ class App extends React.Component {
         axios.get('https://api.adviceslip.com/advice')
             .then((response) => {
                 const { advice } = response.data.slip;
-                this.setState({ advice });
+                return this.setState({ advice: advice });
             })
             .catch((error) => {
-
+                console.log(error);
             });
     };
 
@@ -35,7 +34,7 @@ class App extends React.Component {
                     <h1 className="heading">
                         { advice }
                     </h1>
-                    <button className="button" onClick={this.fetchAdvice}>
+                    <button className="button" onClick={() => this.setState({advice})}>
                         <span>Give me more!!!</span>
                     </button>
                 </div>
